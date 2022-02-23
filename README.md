@@ -1,4 +1,10 @@
-# scratch-gui
+# replay-scratch-gui
+
+### Modified version of [llk/scratch-gui](https://github.com/LLK/scratch-gui). Used to replay JSON codestates.
+
+
+## Readme of scratch.gui:
+
 #### Scratch GUI is a set of React components that comprise the interface for creating and running Scratch 3.0 projects
 
 ## Installation
