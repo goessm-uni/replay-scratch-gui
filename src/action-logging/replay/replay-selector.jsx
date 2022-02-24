@@ -5,6 +5,8 @@ import axios from 'axios';
 import styles from './replay-selector.css';
 import VM from 'scratch-vm';
 
+const endpointToken = 'YOUR_TOKEN';
+
 class ReplaySelector extends React.Component {
     constructor (props) {
         super(props);
@@ -62,13 +64,17 @@ class ReplaySelector extends React.Component {
         } else {
             return;
         }
-
+        const params = {
+            taskId: this.state.taskId,
+            userId: this.state.userId,
+            timestamp: this.state.lastTimestamp
+        };
+        const headers = {
+            Authorization: `Basic ${endpointToken}`
+        };
         axios.get(fullUrl, {
-            params: {
-                taskId: this.state.taskId,
-                userId: this.state.userId,
-                timestamp: this.state.lastTimestamp
-            }
+            params: params,
+            headers: headers
         })
             .then(response => {
                 const actionlog = response.data.actionlog;
