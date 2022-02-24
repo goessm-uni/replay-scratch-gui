@@ -77,6 +77,8 @@ import scratchLogo from './scratch-logo.svg';
 
 import sharedMessages from '../../lib/shared-messages';
 
+import ReplaySelector from '../../action-logging/replay/replay-selector.jsx'; //goessm
+
 const ariaMessages = defineMessages({
     language: {
         id: 'gui.menuBar.LanguageSelector',
@@ -625,6 +627,7 @@ class MenuBar extends React.Component {
                             <SaveStatus />
                         )}
                     </div>
+                    <ReplaySelector vm={this.props.vm} />
                     {this.props.sessionExists ? (
                         this.props.username ? (
                             // ************ user is logged in ************
